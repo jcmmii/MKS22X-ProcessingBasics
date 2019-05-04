@@ -33,18 +33,7 @@ class Visualizer {
     //the line is the 0 y-value, the top is 100, the bottom is -100
     line(x, y+100, x+400, y+100);
 
-    //You need to use a loop. You need to make the HEIGHT of the bars 
-    //the values in the array.
-    //Negative values are red, and go below the line.
-    //Positive values are green and go above the line.
-
-    //THESE ARE WRONG: They just illustrate how they could look
-   // fill(255, 0, 0);
-   // rect(x+40, y+100, 60, 50);
-   // fill(0, 255, 0);
-   // rect(x+120, y+50, 60, 50);
-
-    //REFERENCE: rect(x,y,WIDTH,HEIGHT)
+    //REFERENCE: rect(x,y,WIDTH,HEIGHT) fill(RED,GREEN,BLUE)
     //REMINDER: y axis is inverted! positive values[i] go down, vice versa
     for(int i = 0; i < values.length; i++) {
       if(values[i]>=50) {
@@ -63,6 +52,7 @@ class Visualizer {
     }
     //Width of the visualizer is 400!
   }
+  
   void update() {
     for (int i = 0; i < values.length; i++) {
       values[i] += speeds[i]; //the speed updates the values. Do not touch this.
