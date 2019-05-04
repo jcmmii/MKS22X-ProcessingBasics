@@ -45,18 +45,23 @@ class Visualizer {
    // rect(x+120, y+50, 60, 50);
 
     //REFERENCE: rect(x,y,WIDTH,HEIGHT)
+    //REMINDER: y axis is inverted! positive values[i] go down, vice versa
     for(int i = 0; i < values.length; i++) {
-      if(values[i]>0) {
-        fill(255,0,0); //GREEN
-        rect(x + 40 * i, y+100, 40, values[i]);
-      } else {
-        fill(0,255,0); //RED
-        rect(x + 40 * i, y+100, 40, values[i]);
+      if(values[i]>=50) {
+        fill(255,0,0); //RED
       }
+      else if (values[i] > 0 && values[i] < 50) {
+        fill(255,157,36); //ORANGE
+      }
+      else if (values[i] <= 0 && values[i] > -50) {
+        fill(251,255,31); //YELLOW
+      } 
+      else {
+        fill(0,255,0); //GREEN
+      }
+      rect(x + 40 * i, y+100, 40, values[i]);
     }
     //Width of the visualizer is 400!
-
-  
   }
   void update() {
     for (int i = 0; i < values.length; i++) {
